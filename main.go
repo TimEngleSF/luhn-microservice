@@ -1,9 +1,12 @@
 package main
 
 import (
-	"fmt"
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	fmt.Println(validateCard(17893729974))
+	r := gin.Default()
+
+	r.GET("/", handleRequest)
+	r.Run(":3000")
 }
